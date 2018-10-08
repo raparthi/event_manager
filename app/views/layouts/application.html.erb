@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EventManager</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light static-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Event Manager</a>
+    <%- if current_user %>
+    <%= link_to "Sign Out", destroy_user_session_path, method: 'delete', class: "btn btn-primary"  %>
+    <%- end%>
+  </div>
+</nav>
+
+
+
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+     <%= link_to "Add  Event", new_event_path %>
+     <%= select_tag "Users", options_from_collection_for_select(User.all, "id", "name") %>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-md-6"><div id="calendar"></div></div>
+    <div class="col-md-6">
+      <table class="table table-bordered">
+        <%- current_user.events.each do |event| %>
+          <tr>
+            <td><%= event.title%></td>
+            <td><%= event.start %></td>
+            <td><%= event.end %></td>
+            <td><%= link_to "Edit", edit_event_path(event)%></td>
+            <td><%= link_to "Delete", event_path(event), method: :delete %></td>
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+  </div>
+</div>
+
