@@ -29,7 +29,7 @@
     </div>
     <div class="form-group">
       <label for="end">Invite Users</label>
-      <%= f.collection_check_boxes(:event_users, User.all, :id, :name) %>
+      <%= f.collection_select :event_users, User.all, :id, :name, {:include_blank => 'Select Users'}, {class: 'form-control', } %>
     </div>
     <div class="form-group">
 

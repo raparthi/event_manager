@@ -18,6 +18,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require bootstrap-datepicker
+//= require bootstrap-multiselect
 //= require fullcalendar/locale-all
 //= require_tree .
 
